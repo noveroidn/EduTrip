@@ -1,52 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:edutrip/data/trip_data.dart';
+import 'package:edutrip/widgets/trip_card.dart';
+import 'package:edutrip/screens/detail_screen.dart';
 
-class FavoriteScreen extends StatefulWidget {
-  const FavoriteScreen({super.key});
+class FavoriteScreen extends StatelessWidget {
+  final List<Map<String, dynamic>> favoriteTrips;
 
-  @override
-  State<FavoriteScreen> createState() => _FavoriteScreenState();
-}
+  const FavoriteScreen({super.key, required this.favoriteTrips});
 
-class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
-    // Ambil hanya data yang isFavorite == true
-    final favoriteTrips =
-    tripList.where((trip) => trip['isFavorite'] == true).toList();
-
     return Scaffold(
       appBar: AppBar(
+        title: const Text("Favorites"),
         backgroundColor: const Color(0xFF3B82F6),
-        title: const Text(
-          "My Favorites",
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
-        centerTitle: true,
       ),
       body: favoriteTrips.isEmpty
           ? const Center(
         child: Text(
-          "Belum ada favorit",
-          style: TextStyle(fontSize: 16, color: Colors.grey),
+          "No favorite trips added yet!",
+          style: TextStyle(fontSize: 18, color: Colors.grey),
         ),
       )
           : ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: favoriteTrips.length,
         itemBuilder: (context, index) {
-          final item = favoriteTrips[index];
-          return Card(
-            margin: const EdgeInsets.only(bottom: 12),
-            child: ListTile(
-              leading: Image.network(
-                item['thumbnail'],
-                width: 60,
-                fit: BoxFit.cover,
-              ),
-              title: Text(item['title']),
-              subtitle: Text(item['type']),
-            ),
+          final trip = favoriteTrips[index];
+          return TripCard(
+            title: trip['title'],
+            type: trip['type'],
+            thumbnail: trip['thumbnail'],
+            isFavorite: trip['isFavorite'],
+            onTapFavorite: () {
+              // Fitur ini tidak perlu mengubah status favorit karena hanya tampilan
+            },
+            onTapCard: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => DetailScreen(
+                    title: trip['title'],
+                    thumbnail: trip['thumbnail'],
+                    videoUrl: trip['videoUrl'],
+                  ),
+                ),
+              );
+            },
           );
         },
       ),

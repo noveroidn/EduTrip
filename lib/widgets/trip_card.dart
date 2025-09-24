@@ -5,8 +5,8 @@ class TripCard extends StatelessWidget {
   final String type;
   final String thumbnail;
   final bool isFavorite;
-  final VoidCallback onTapFavorite;
-  final VoidCallback onTapCard;
+  final Function() onTapFavorite;
+  final Function() onTapCard;
 
   const TripCard({
     super.key,
@@ -37,19 +37,26 @@ class TripCard extends StatelessWidget {
                     fit: BoxFit.cover,
                     height: 180,
                     width: double.infinity,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Container(
+                        height: 180,
+                        width: double.infinity,
+                        color: Colors.grey[200],
+                        child: const Icon(Icons.broken_image, size: 50, color: Colors.grey),
+                      );
+                    },
                   ),
                 ),
-
                 Positioned(
                   top: 8,
                   right: 8,
-                  child: GestureDetector(
-                    onTap: onTapFavorite,
-                    child: Icon(
+                  child: IconButton(
+                    onPressed: onTapFavorite,
+                    icon: Icon(
                       isFavorite ? Icons.favorite : Icons.favorite_border,
-                      color: Colors.red,
-                      size: 28,
+                      color: isFavorite ? Colors.red : Colors.white,
                     ),
+                    iconSize: 28,
                   ),
                 ),
               ],

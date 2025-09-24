@@ -3,6 +3,7 @@ import 'screens/splash_screen.dart';
 
 void main() {
   runApp(const EduTripApp());
+  print("sigma");
 }
 
 class EduTripApp extends StatelessWidget {

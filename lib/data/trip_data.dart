@@ -1,37 +1,145 @@
-final List<Map<String, dynamic>> tripList = [
+const List<Map<String, dynamic>> tripList = [
   {
-    'title': 'Museum Nasional',
-    'type': 'Museum',
-    'thumbnail': 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit19201280gsm/events/2025/01/06/15593d91-cf85-4144-b3ba-810a2b71a344-1736130939685-73f3d7cd9693daf2cc741c1e5713da16.png',
-    'videoUrl': 'https://www.youtube.com/watch?v=HZBeeOthJUA',
+    'title': 'Keindahan Alam Nusa Penida Bali',
+    'type': 'Adventure',
+    'thumbnail': 'https://picsum.photos/id/1018/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=W_x4iK5bVjM',
     'isFavorite': false,
   },
   {
-    'title': 'Kebun Raya Bogor',
-    'type': 'Kebun Raya',
-    'thumbnail': 'https://skycitytrans.com/wp-content/uploads/2024/06/Pelestarian.webp',
-    'videoUrl': 'https://www.youtube.com/watch?v=d7T1R-RvoXw',
+    'title': 'Jelajah Wisata Kebun Raya Bogor',
+    'type': 'Nature',
+    'thumbnail': 'https://picsum.photos/id/1016/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=a_6Fm0d5kX8',
     'isFavorite': false,
   },
   {
-    'title': 'Planetarium Jakarta',
-    'type': 'Planetarium',
-    'thumbnail': 'https://www.rumah123.com/seo-cms/assets/Teater_Bintang_ab6f0be40f/Teater_Bintang_ab6f0be40f.webp    ',
-    'videoUrl': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    'title': 'Eksplorasi Gunung Bromo',
+    'type': 'Mountain',
+    'thumbnail': 'https://picsum.photos/id/1020/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=0p8y_jY0yK0',
     'isFavorite': false,
   },
   {
-    'title': 'Museum Geologi Bandung',
-    'type': 'Museum',
-    'thumbnail': 'https://jnewsonline.com/wp-content/uploads/2024/07/museum-geologi-cropped.jpg',
-    'videoUrl': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    'title': 'Wisata Sejarah Kota Tua Jakarta',
+    'type': 'History',
+    'thumbnail': 'https://picsum.photos/id/1025/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=20NqJ9wK0y4',
     'isFavorite': false,
   },
   {
-    'title': 'Taman Mini Indonesia Indah',
-    'type': 'Kebun Raya',
-    'thumbnail': 'https://cozzy.id/uploads/0000/630/2024/09/11/cozzyid-hotel-murah-hotel-terdekat-penginapan-murah-penginapan-terdekat-booking-hotel-taman-mini-indonesia-indah-indonesia-dalam-satu-tempat-sumber-gambar-wikipedia.jpg',
-    'videoUrl': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    'title': 'Pesona Danau Toba, Sumatera Utara',
+    'type': 'Nature',
+    'thumbnail': 'https://picsum.photos/id/1033/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=j5fI1x_B7iA',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Liburan Seru ke Candi Borobudur',
+    'type': 'Culture',
+    'thumbnail': 'https://picsum.photos/id/1043/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=8T_b4r_38fE',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Petualangan di Raja Ampat, Papua',
+    'type': 'Diving',
+    'thumbnail': 'https://picsum.photos/id/1053/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=L6o5t92_o20',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Menikmati Keindahan Pantai Pink Lombok',
+    'type': 'Beach',
+    'thumbnail': 'https://picsum.photos/id/1063/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=g-n6N1fW5gU',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Wisata Edukasi di Museum Angkut Malang',
+    'type': 'Education',
+    'thumbnail': 'https://picsum.photos/id/1073/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=j5d_p8Zk_tA',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Pesona Alam Pulau Komodo',
+    'type': 'Wildlife',
+    'thumbnail': 'https://picsum.photos/id/1083/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=j5d_p8Zk_tA',
+    'isFavorite': false,
+  },
+];
+
+const List<Map<String, dynamic>> recommendedTrips = [
+  {
+    'title': 'Keindahan Alam Nusa Penida Bali',
+    'type': 'Adventure',
+    'thumbnail': 'https://picsum.photos/id/1018/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=W_x4iK5bVjM',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Jelajah Wisata Kebun Raya Bogor',
+    'type': 'Nature',
+    'thumbnail': 'https://picsum.photos/id/1016/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=a_6Fm0d5kX8',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Eksplorasi Gunung Bromo',
+    'type': 'Mountain',
+    'thumbnail': 'https://picsum.photos/id/1020/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=0p8y_jY0yK0',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Wisata Sejarah Kota Tua Jakarta',
+    'type': 'History',
+    'thumbnail': 'https://picsum.photos/id/1025/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=20NqJ9wK0y4',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Pesona Danau Toba, Sumatera Utara',
+    'type': 'Nature',
+    'thumbnail': 'https://picsum.photos/id/1033/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=j5fI1x_B7iA',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Liburan Seru ke Candi Borobudur',
+    'type': 'Culture',
+    'thumbnail': 'https://picsum.photos/id/1043/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=8T_b4r_38fE',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Petualangan di Raja Ampat, Papua',
+    'type': 'Diving',
+    'thumbnail': 'https://picsum.photos/id/1053/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=L6o5t92_o20',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Menikmati Keindahan Pantai Pink Lombok',
+    'type': 'Beach',
+    'thumbnail': 'https://picsum.photos/id/1063/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=g-n6N1fW5gU',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Wisata Edukasi di Museum Angkut Malang',
+    'type': 'Education',
+    'thumbnail': 'https://picsum.photos/id/1073/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=j5d_p8Zk_tA',
+    'isFavorite': false,
+  },
+  {
+    'title': 'Pesona Alam Pulau Komodo',
+    'type': 'Wildlife',
+    'thumbnail': 'https://picsum.photos/id/1083/300/200', // Placeholder
+    'videoUrl': 'https://www.youtube.com/watch?v=j5d_p8Zk_tA',
     'isFavorite': false,
   },
 ];

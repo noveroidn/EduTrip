@@ -12,14 +12,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Use a local list to manage the favorite state
   late List<Map<String, dynamic>> localTripList;
 
   @override
   void initState() {
     super.initState();
-    // Copy the data from the imported file to a local list
-    localTripList = List.from(tripList);
+    localTripList = tripList.map((trip) => Map<String, dynamic>.from(trip)).toList();
   }
 
   void toggleFavorite(int index) {
@@ -30,6 +28,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final favoriteTrips = localTripList.where((trip) => trip['isFavorite'] == true).toList();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF3B82F6),
@@ -44,13 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const FavoriteScreen()),
+                MaterialPageRoute(
+                  builder: (context) => FavoriteScreen(favoriteTrips: favoriteTrips),
+                ),
               );
             },
           ),
         ],
       ),
-
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: localTripList.length,
