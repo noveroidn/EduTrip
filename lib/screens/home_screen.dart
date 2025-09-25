@@ -14,11 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late List<Map<String, dynamic>> localTripList;
 
-  @override
-  void initState() {
-    super.initState();
-    localTripList = tripList.map((trip) => Map<String, dynamic>.from(trip)).toList();
-  }
+t
 
   void toggleFavorite(int index) {
     setState(() {
